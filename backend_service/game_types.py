@@ -70,6 +70,7 @@ class CardState(BaseModel):
     num_counters: int
     action_used: bool
     counters_can_be_taken: bool
+    divisor: int
 
 
 class PlayerState(BaseModel):

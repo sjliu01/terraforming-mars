@@ -67,3 +67,32 @@ class GameManager:
     @classmethod
     def load_game(cls):
         pass
+
+    @classmethod
+    def end_game(cls):
+        """
+        Count up all the points for all players
+        For each player
+        + Terraform rating
+        + Victory points on cards
+        + Victory points on cards via tokens
+        + Awards 
+        + Milestones
+        + Greeneries
+        + Cities adjacent to greeneries
+        """
+        players = [player for _ in self.state.player_state]
+        board_state = self.state.board_state
+        player_points = {p:0 for p in players}
+        for p in players:
+            # terraform rating
+            player_points[p] += p.terraform_rating
+
+            # Victory points on cards
+            player_points[p] += sum([card_state.num_counters // card_state.divisor for card_state in p.tableau.values()])
+
+            # Look at cards. Add up points
+            # ..
+
+
+            
