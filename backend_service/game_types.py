@@ -1,3 +1,16 @@
+"""TODOs
+- standard projects
+- milestones
+- awards
+
+- the tile map (5 -> 9 -> 5, and two moon tiles)
+
+- global parameter bonus steps
+
+SEE RULES AT
+https://officialgamerules.org/wp-content/uploads/2025/02/Terraforming-mars-rulebook.pdf
+"""
+
 from enum import Enum, auto
 import typing as t
 
@@ -16,27 +29,30 @@ TileId = int
 # Note: should check how these enums get serialized in the API
 
 
-class EnvironmentMetric(Enum):
-    OCEANS = auto()
+class GlobalParameter(Enum):
+    OCEAN = auto()
     OXYGEN = auto()
     TEMPERATURE = auto()
 
 
 class Phase(Enum):
-    DRAW = auto()
-    PLAY = auto()
+    # Do we need a GAME START?
+    TURN_ORDER = auto()
+    RESEARCH = auto()
+    ACTION = auto()
     PRODUCTION = auto()
     FINAL_PRODUCTION = auto()
     FINAL_GREENERY = auto()
 
 
 class Resource(Enum):
-    MC = auto()
+    MEGA_CREDITS = auto()
     STEEL = auto()
     TITANIUM = auto()
     PLANT = auto()
     ENERGY = auto()
     HEAT = auto()
+    # Animal? Microbe?
 
 
 class TileType(Enum):
@@ -49,8 +65,10 @@ class TileType(Enum):
 class Tag(Enum):
     ANIMAL = auto()
     BUILDING = auto()
+    CITY = auto()
     EARTH = auto()
-    JUPITER = auto()
+    EVENT = auto()
+    JOVIAN = auto()
     MICROBE = auto()
     PLANT = auto()
     POWER = auto()
@@ -67,9 +85,9 @@ class Trigger(Enum):
 
 
 class CardState(BaseModel):
-    num_counters: int
+    num_resources: int
     action_used: bool
-    counters_can_be_taken: bool
+    resources_can_be_taken: bool
 
 
 class PlayerState(BaseModel):
@@ -106,17 +124,17 @@ class TileState(BaseModel):
         )
 
 
-class RoundState(BaseModel):
+class GenerationState(BaseModel):
     phase: Phase
-    first_to_play: int
-    passed_this_round: list[bool]
+    first_player: int
+    passed: list[bool]
 
     @classmethod
-    def new(cls, num_players: int, first_to_play: int = 0) -> "RoundState":
-        return RoundState(
-            phase=Phase.DRAW,
-            first_to_play=first_to_play,
-            passed_this_round=[False] * num_players,
+    def new(cls, num_players: int, first_to_play: int = 0) -> "GenerationState":
+        return GenerationState(
+            phase=Phase.RESEARCH,
+            first_player=first_to_play,
+            passed=[False] * num_players,
         )
 
 
@@ -125,9 +143,9 @@ class GameState(BaseModel):
     deck: t.Sequence[CardId]
     player_state: list[PlayerState]
     board_state: t.MutableMapping[TileId, TileState]
-    round_state: RoundState
-    environment_targets: t.MutableMapping[EnvironmentMetric, float]
-    environment_progress: t.MutableMapping[EnvironmentMetric, float]
+    generation_state: GenerationState
+    global_parameter_targets: t.MutableMapping[GlobalParameter, float]
+    global_parameter_progress: t.MutableMapping[GlobalParameter, float]
     cur_generation: int
 
     @classmethod
@@ -142,16 +160,16 @@ class GameState(BaseModel):
             deck=[],
             player_state=[PlayerState.new() for _ in range(num_players)],
             board_state={_id: TileState.new() for _id in tile_ids},
-            round_state=RoundState.new(num_players),
-            environment_targets={
-                EnvironmentMetric.TEMPERATURE: 8,
-                EnvironmentMetric.OXYGEN: 14,
-                EnvironmentMetric.OCEANS: 9,
+            generation_state=GenerationState.new(num_players),
+            global_parameter_targets={
+                GlobalParameter.TEMPERATURE: 8,
+                GlobalParameter.OXYGEN: 14,
+                GlobalParameter.OCEAN: 9,
             },
-            environment_progress={
-                EnvironmentMetric.TEMPERATURE: -30,
-                EnvironmentMetric.OXYGEN: 0,
-                EnvironmentMetric.OCEANS: 0,
+            global_parameter_progress={
+                GlobalParameter.TEMPERATURE: -30,
+                GlobalParameter.OXYGEN: 0,
+                GlobalParameter.OCEAN: 0,
             },
             cur_generation=1,
         )
@@ -169,9 +187,11 @@ class Corporation(BaseModel):
 
 
 class Card(BaseModel):
+    cost: int
     tags: list[Tag]
-    action: t.Callable[[GameState, int], GameState]
     requirements: t.Callable[[GameState, int], bool]
+    action: t.Callable[[GameState, int], GameState]
+    immediate_effect: t.Callable[[GameState], GameState]
     passive_effect: t.Callable[[GameState, int], GameState]
     triggered_effect: t.Callable[[Trigger], t.Callable[[GameState, int], GameState]]
     victory_points: t.Callable[[PlayerState], int]
