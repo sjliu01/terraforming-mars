@@ -11,7 +11,7 @@ SEE RULES AT
 https://officialgamerules.org/wp-content/uploads/2025/02/Terraforming-mars-rulebook.pdf
 """
 
-from enum import Enum, auto
+from enum import StrEnum, auto
 import typing as t
 
 from pydantic import BaseModel
@@ -29,13 +29,13 @@ TileId = int
 # Note: should check how these enums get serialized in the API
 
 
-class GlobalParameter(Enum):
+class GlobalParameter(StrEnum):
     OCEAN = auto()
     OXYGEN = auto()
     TEMPERATURE = auto()
 
 
-class Phase(Enum):
+class Phase(StrEnum):
     # Do we need a GAME START?
     TURN_ORDER = auto()
     RESEARCH = auto()
@@ -45,7 +45,7 @@ class Phase(Enum):
     FINAL_GREENERY = auto()
 
 
-class Resource(Enum):
+class Resource(StrEnum):
     MEGA_CREDITS = auto()
     STEEL = auto()
     TITANIUM = auto()
@@ -55,14 +55,14 @@ class Resource(Enum):
     # Animal? Microbe?
 
 
-class TileType(Enum):
+class TileType(StrEnum):
     CITY = auto()
     GREENERY = auto()
     OCEAN = auto()
     SPECIAL = auto()
 
 
-class Tag(Enum):
+class Tag(StrEnum):
     ANIMAL = auto()
     BUILDING = auto()
     CITY = auto()
@@ -76,7 +76,7 @@ class Tag(Enum):
     SPACE = auto()
 
 
-class Trigger(Enum):
+class Trigger(StrEnum):
     AFTER_CARD_PLAY = auto()
     AFTER_TILE_PLAY = auto()
 
@@ -93,9 +93,9 @@ class CardState(BaseModel):
 class PlayerState(BaseModel):
     corporation: CorporationId | None
     hand: list[CardId]
-    tableau: t.MutableMapping[CardId, CardState]
-    production: t.MutableMapping[Resource, int]
-    resources: t.MutableMapping[Resource, int]
+    tableau: dict[CardId, CardState]
+    production: dict[Resource, int]
+    resources: dict[Resource, int]
     terraform_rating: int
 
     @classmethod
@@ -139,13 +139,13 @@ class GenerationState(BaseModel):
 
 
 class GameState(BaseModel):
-    all_cards: t.Collection[CardId]
-    deck: t.Sequence[CardId]
+    all_cards: list[CardId]
+    deck: list[CardId]
     player_state: list[PlayerState]
-    board_state: t.MutableMapping[TileId, TileState]
+    board_state: dict[TileId, TileState]
     generation_state: GenerationState
-    global_parameter_targets: t.MutableMapping[GlobalParameter, float]
-    global_parameter_progress: t.MutableMapping[GlobalParameter, float]
+    global_parameter_targets: dict[GlobalParameter, float]
+    global_parameter_progress: dict[GlobalParameter, float]
     cur_generation: int
 
     @classmethod
@@ -156,7 +156,7 @@ class GameState(BaseModel):
         tile_ids: t.Collection[TileId],
     ) -> "GameState":
         return GameState(
-            all_cards=card_ids,
+            all_cards=list(card_ids),
             deck=[],
             player_state=[PlayerState.new() for _ in range(num_players)],
             board_state={_id: TileState.new() for _id in tile_ids},

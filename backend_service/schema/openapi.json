@@ -1,0 +1,315 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "FastAPI",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Root",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/state/init": {
+      "get": {
+        "summary": "Get Initial Game State",
+        "operationId": "get_initial_game_state_api_state_init_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GameState"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CardState": {
+        "properties": {
+          "num_resources": {
+            "type": "integer",
+            "title": "Num Resources"
+          },
+          "action_used": {
+            "type": "boolean",
+            "title": "Action Used"
+          },
+          "resources_can_be_taken": {
+            "type": "boolean",
+            "title": "Resources Can Be Taken"
+          }
+        },
+        "type": "object",
+        "required": [
+          "num_resources",
+          "action_used",
+          "resources_can_be_taken"
+        ],
+        "title": "CardState"
+      },
+      "GameState": {
+        "properties": {
+          "all_cards": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "All Cards"
+          },
+          "deck": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Deck"
+          },
+          "player_state": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerState"
+            },
+            "type": "array",
+            "title": "Player State"
+          },
+          "board_state": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/TileState"
+            },
+            "type": "object",
+            "title": "Board State"
+          },
+          "generation_state": {
+            "$ref": "#/components/schemas/GenerationState"
+          },
+          "global_parameter_targets": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "propertyNames": {
+              "$ref": "#/components/schemas/GlobalParameter"
+            },
+            "type": "object",
+            "title": "Global Parameter Targets"
+          },
+          "global_parameter_progress": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "propertyNames": {
+              "$ref": "#/components/schemas/GlobalParameter"
+            },
+            "type": "object",
+            "title": "Global Parameter Progress"
+          },
+          "cur_generation": {
+            "type": "integer",
+            "title": "Cur Generation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "all_cards",
+          "deck",
+          "player_state",
+          "board_state",
+          "generation_state",
+          "global_parameter_targets",
+          "global_parameter_progress",
+          "cur_generation"
+        ],
+        "title": "GameState"
+      },
+      "GenerationState": {
+        "properties": {
+          "phase": {
+            "$ref": "#/components/schemas/Phase"
+          },
+          "first_player": {
+            "type": "integer",
+            "title": "First Player"
+          },
+          "passed": {
+            "items": {
+              "type": "boolean"
+            },
+            "type": "array",
+            "title": "Passed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "phase",
+          "first_player",
+          "passed"
+        ],
+        "title": "GenerationState"
+      },
+      "GlobalParameter": {
+        "type": "string",
+        "enum": [
+          "ocean",
+          "oxygen",
+          "temperature"
+        ],
+        "title": "GlobalParameter"
+      },
+      "Phase": {
+        "type": "string",
+        "enum": [
+          "turn_order",
+          "research",
+          "action",
+          "production",
+          "final_production",
+          "final_greenery"
+        ],
+        "title": "Phase"
+      },
+      "PlayerState": {
+        "properties": {
+          "corporation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Corporation"
+          },
+          "hand": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Hand"
+          },
+          "tableau": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CardState"
+            },
+            "type": "object",
+            "title": "Tableau"
+          },
+          "production": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "propertyNames": {
+              "$ref": "#/components/schemas/Resource"
+            },
+            "type": "object",
+            "title": "Production"
+          },
+          "resources": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "propertyNames": {
+              "$ref": "#/components/schemas/Resource"
+            },
+            "type": "object",
+            "title": "Resources"
+          },
+          "terraform_rating": {
+            "type": "integer",
+            "title": "Terraform Rating"
+          }
+        },
+        "type": "object",
+        "required": [
+          "corporation",
+          "hand",
+          "tableau",
+          "production",
+          "resources",
+          "terraform_rating"
+        ],
+        "title": "PlayerState"
+      },
+      "Resource": {
+        "type": "string",
+        "enum": [
+          "mega_credits",
+          "steel",
+          "titanium",
+          "plant",
+          "energy",
+          "heat"
+        ],
+        "title": "Resource"
+      },
+      "TileState": {
+        "properties": {
+          "tile": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TileType"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "owner": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Owner"
+          },
+          "reserved_by": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reserved By"
+          }
+        },
+        "type": "object",
+        "required": [
+          "tile",
+          "owner",
+          "reserved_by"
+        ],
+        "title": "TileState"
+      },
+      "TileType": {
+        "type": "string",
+        "enum": [
+          "city",
+          "greenery",
+          "ocean",
+          "special"
+        ],
+        "title": "TileType"
+      }
+    }
+  }
+}
