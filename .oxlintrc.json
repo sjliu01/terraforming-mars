@@ -1,0 +1,15 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn"
+	},
+	"ignorePatterns": ["src/lib/schema.d.ts", ".svelte-kit"],
+	"overrides": [
+		{
+			// `export {}` is required in app.d.ts to make it a module
+			"files": ["src/app.d.ts"],
+			"rules": { "unicorn/require-module-specifiers": "off" }
+		}
+	]
+}

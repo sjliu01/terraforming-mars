@@ -7,6 +7,7 @@ app = FastAPI()
 class MessageResponse(BaseModel):
     message: str
 
+
 @app.get(
     "/api/message/",
     response_model=MessageResponse,

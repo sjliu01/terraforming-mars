@@ -1,0 +1,42 @@
+# Git hooks. Installed via `lefthook install` (runs automatically from the
+# package.json `prepare` script on `bun install`).
+#
+# pre-commit: auto-fix + re-stage staged files. Only unfixable lint errors block.
+# pre-push: slower typechecks (svelte-check covers .ts and .svelte; pyright covers python).
+
+pre-commit:
+  parallel: true
+  jobs:
+    # Python: lint-fix then format, sequentially (same files)
+    - name: python
+      glob: '*.py'
+      group:
+        piped: true
+        jobs:
+          - name: ruff-check
+            run: uv run ruff check --fix {staged_files}
+            stage_fixed: true
+          - name: ruff-format
+            run: uv run ruff format {staged_files}
+            stage_fixed: true
+    # JS/Svelte/etc: lint-fix then format, sequentially (same files)
+    - name: frontend
+      glob: '*.{ts,js,svelte,json,css,md,yaml,yml}'
+      group:
+        piped: true
+        jobs:
+          - name: oxlint
+            glob: '*.{ts,js,svelte}'
+            run: bunx oxlint --fix {staged_files}
+            stage_fixed: true
+          - name: oxfmt
+            run: bunx oxfmt {staged_files}
+            stage_fixed: true
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: svelte-check
+      run: bun run check
+    - name: pyright
+      run: uv run pyright
