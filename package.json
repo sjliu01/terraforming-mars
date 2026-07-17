@@ -1,27 +1,31 @@
 {
 	"name": "tm-test",
-	"private": true,
 	"version": "0.0.1",
+	"private": true,
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --port 5173",
 		"build": "vite build",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+		"prepare": "(svelte-kit sync || echo '') && lefthook install",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json && uv run pyright",
+		"format": "oxfmt && uv run ruff format",
+		"lint": "oxlint && uv run ruff check"
+	},
+	"dependencies": {
+		"openapi-fetch": "^0.17.0",
+		"openapi-typescript": "^7.13.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/kit": "^2.63.0",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"lefthook": "^2.1.10",
+		"oxfmt": "^0.59.0",
+		"oxlint": "^1.74.0",
 		"svelte": "^5.56.1",
 		"svelte-check": "^4.6.0",
 		"typescript": "^5.9.3",
 		"vite": "^8.0.16"
-	},
-	"dependencies": {
-		"openapi-fetch": "^0.17.0",
-		"openapi-typescript": "^7.13.0"
 	}
 }
