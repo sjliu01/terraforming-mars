@@ -1,5 +1,99 @@
 components:
   schemas:
+    CardState:
+      properties:
+        action_used:
+          title: Action Used
+          type: boolean
+        num_resources:
+          title: Num Resources
+          type: integer
+        resources_can_be_taken:
+          title: Resources Can Be Taken
+          type: boolean
+      required:
+      - num_resources
+      - action_used
+      - resources_can_be_taken
+      title: CardState
+      type: object
+    GameState:
+      properties:
+        all_cards:
+          items:
+            type: string
+          title: All Cards
+          type: array
+        board_state:
+          additionalProperties:
+            $ref: '#/components/schemas/TileState'
+          title: Board State
+          type: object
+        cur_generation:
+          title: Cur Generation
+          type: integer
+        deck:
+          items:
+            type: string
+          title: Deck
+          type: array
+        generation_state:
+          $ref: '#/components/schemas/GenerationState'
+        global_parameter_progress:
+          additionalProperties:
+            type: number
+          propertyNames:
+            $ref: '#/components/schemas/GlobalParameter'
+          title: Global Parameter Progress
+          type: object
+        global_parameter_targets:
+          additionalProperties:
+            type: number
+          propertyNames:
+            $ref: '#/components/schemas/GlobalParameter'
+          title: Global Parameter Targets
+          type: object
+        player_state:
+          items:
+            $ref: '#/components/schemas/PlayerState'
+          title: Player State
+          type: array
+      required:
+      - all_cards
+      - deck
+      - player_state
+      - board_state
+      - generation_state
+      - global_parameter_targets
+      - global_parameter_progress
+      - cur_generation
+      title: GameState
+      type: object
+    GenerationState:
+      properties:
+        first_player:
+          title: First Player
+          type: integer
+        passed:
+          items:
+            type: boolean
+          title: Passed
+          type: array
+        phase:
+          $ref: '#/components/schemas/Phase'
+      required:
+      - phase
+      - first_player
+      - passed
+      title: GenerationState
+      type: object
+    GlobalParameter:
+      enum:
+      - ocean
+      - oxygen
+      - temperature
+      title: GlobalParameter
+      type: string
     MessageResponse:
       properties:
         message:
@@ -9,6 +103,99 @@ components:
       - message
       title: MessageResponse
       type: object
+    Phase:
+      enum:
+      - turn_order
+      - research
+      - action
+      - production
+      - final_production
+      - final_greenery
+      title: Phase
+      type: string
+    PlayerState:
+      properties:
+        corporation:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Corporation
+        hand:
+          items:
+            type: string
+          title: Hand
+          type: array
+        production:
+          additionalProperties:
+            type: integer
+          propertyNames:
+            $ref: '#/components/schemas/Resource'
+          title: Production
+          type: object
+        resources:
+          additionalProperties:
+            type: integer
+          propertyNames:
+            $ref: '#/components/schemas/Resource'
+          title: Resources
+          type: object
+        tableau:
+          additionalProperties:
+            $ref: '#/components/schemas/CardState'
+          title: Tableau
+          type: object
+        terraform_rating:
+          title: Terraform Rating
+          type: integer
+      required:
+      - corporation
+      - hand
+      - tableau
+      - production
+      - resources
+      - terraform_rating
+      title: PlayerState
+      type: object
+    Resource:
+      enum:
+      - mega_credits
+      - steel
+      - titanium
+      - plant
+      - energy
+      - heat
+      title: Resource
+      type: string
+    TileState:
+      properties:
+        owner:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Owner
+        reserved_by:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Reserved By
+        tile:
+          anyOf:
+          - $ref: '#/components/schemas/TileType'
+          - type: 'null'
+      required:
+      - tile
+      - owner
+      - reserved_by
+      title: TileState
+      type: object
+    TileType:
+      enum:
+      - city
+      - greenery
+      - ocean
+      - special
+      title: TileType
+      type: string
 info:
   title: FastAPI
   version: 0.1.0
@@ -25,3 +212,14 @@ paths:
                 $ref: '#/components/schemas/MessageResponse'
           description: Successful Response
       summary: Get Message
+  /api/state/init:
+    get:
+      operationId: get_initial_game_state_api_state_init_get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameState'
+          description: Successful Response
+      summary: Get Initial Game State
