@@ -80,6 +80,17 @@ class Trigger(StrEnum):
     AFTER_TILE_PLAY = auto()
 
 
+class Planet(StrEnum):
+    MARS = auto()
+    PHOBOS = auto()
+    GANYMEDE = auto()
+
+
+class Version(StrEnum):
+    BASE = auto()
+    CORPORATE_ERA = auto()
+
+
 # Game state
 
 
@@ -177,15 +188,91 @@ class GameState(BaseModel):
 # Game objects
 
 
-class Corporation(BaseModel):
-    # TODO: How to factor in, e.g., greeneries are cheaper?
+"""
+Action categories:
+    - pay X resource to get Y resource
+    - pay X resource to get Y resource per city
+    - pay X resource to increase requirement
+        - may use titanium or steel
+    - pay X production to increase terraform rating
+    - pay X resource for specific action
+        - reveal card see if microbe if so add resource
+    - remove x resource from another card to get a resource on this card
+    - one of two action options
+    - pay X resource to increase production
+
+Immediate effect categories:
+    - increase x production
+    - increase x production per condition of game state
+    - increase x production or y production
+    - place city
+    - place city on specific place (tile filter)
+    - place greenery on specific tile
+    - place named tile
+    - increase y requirement
+    - decrease x production (own)
+    - decrease x production (other)
+    - get x resource
+    - get x resource (choice between 3)
+    - get x resource per condition of game state
+    - add a resource to a card
+    - decrease y resource self / other
+    - increase production of x resource by Y or by Z if a condition is met
+    - increase terraform rating
+
+- passive effect categories
+    - all cards cost one less
+    - specific tags cost less
+    - greeneries cost one less plant
+    - requirements are flexible
+    - none of your plants / microbes can get taken
+
+- triggered effect
+    - whenever any ocean is placed, get plants
+    - when you play a particular tag, get resources
+    - when you play a particular tag, add resource to this card
+    - whenever any city is placed, get money
+
+VP categories:
+    - points per resource on card
+    - points if any resource on card
+    - points per specific type of adjacent tile
+    - points per tag you have
+    - integer points
+"""
+
+
+class CorporationDescription(BaseModel):
+    id: int
+    name: str
     tags: list[Tag]
+    version: Version
+    # action_description: str | None
+    # passive_effect_description: str | None
+    # triggered_effect_description: str | None
+
+
+class Corporation(CorporationDescription):
     action: t.Callable[[GameState, int], GameState]
     passive_effect: t.Callable[[GameState, int], GameState]
     triggered_effect: t.Callable[[Trigger], t.Callable[[GameState, int], GameState]]
 
 
-class Card(BaseModel):
+class CardDescription(BaseModel):
+    id: int
+    name: str
+    base_cost: int
+    tags: list[Tag]
+    version: Version
+    # requirements: t.Callable[[GameState, int], bool]
+    # action: t.Callable[[GameState, int], GameState]
+    # immediate_effect: t.Callable[[GameState], GameState]
+    # passive_effect: t.Callable[[GameState, int], GameState]
+    # triggered_effect: t.Callable[[Trigger], t.Callable[[GameState, int], GameState]]
+    # victory_points: t.Callable[[PlayerState], int]
+
+
+class Card(CardDescription):
     cost: int
     tags: list[Tag]
     requirements: t.Callable[[GameState, int], bool]
@@ -196,8 +283,21 @@ class Card(BaseModel):
     victory_points: t.Callable[[PlayerState], int]
 
 
+class TileDescription(BaseModel):
+    # We use cube coordinates for the tiles
+    # See https://www.redblobgames.com/grids/hexagons/#coordinates-axial
+    q: int
+    r: int
+    planet: Planet
+    name: str | None
+    resource_bonuses: list[Resource]
+    card_bonuses: int
+    is_reserved_for_ocean: bool
+
+
 class Tile(BaseModel):
     adjacent: list[TileId]  # or list tile?
     name: str | None
-    bonuses: list[Resource]
+    resource_bonuses: list[Resource]
+    card_bonuses: int
     isReservedForOcean: bool

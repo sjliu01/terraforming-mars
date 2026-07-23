@@ -1,0 +1,1458 @@
+[
+	{
+		"id": 1,
+		"name": "Adaptation Technology",
+		"base_cost": 12,
+		"tags": ["science"],
+		"version": "base"
+	},
+	{
+		"id": 2,
+		"name": "Adapted Lichen",
+		"base_cost": 9,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 3,
+		"name": "Advanced Ecosystems",
+		"base_cost": 11,
+		"tags": ["plant", "microbe", "animal"],
+		"version": "base"
+	},
+	{
+		"id": 4,
+		"name": "Aerobraked Ammonia Asteroid",
+		"base_cost": 26,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 5,
+		"name": "Ants",
+		"base_cost": 9,
+		"tags": ["microbe"],
+		"version": "base"
+	},
+	{
+		"id": 6,
+		"name": "Aquifer Pumping",
+		"base_cost": 18,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 7,
+		"name": "Algae",
+		"base_cost": 10,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 8,
+		"name": "ArchaeBacteria",
+		"base_cost": 6,
+		"tags": ["microbe"],
+		"version": "base"
+	},
+	{
+		"id": 9,
+		"name": "Arctic Algae",
+		"base_cost": 12,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 10,
+		"name": "Artificial Lake",
+		"base_cost": 15,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 11,
+		"name": "Artificial Photosynthesis",
+		"base_cost": 12,
+		"tags": ["science"],
+		"version": "base"
+	},
+	{
+		"id": 12,
+		"name": "Asteroid",
+		"base_cost": 14,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 13,
+		"name": "Asteroid Mining",
+		"base_cost": 30,
+		"tags": ["jovian", "space"],
+		"version": "base"
+	},
+	{
+		"id": 14,
+		"name": "Beam From A Thorium Asteroid",
+		"base_cost": 32,
+		"tags": ["jovian", "space", "power"],
+		"version": "base"
+	},
+	{
+		"id": 15,
+		"name": "Big Asteroid",
+		"base_cost": 27,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 16,
+		"name": "Biomass Combustors",
+		"base_cost": 4,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 17,
+		"name": "Birds",
+		"base_cost": 10,
+		"tags": ["animal"],
+		"version": "base"
+	},
+	{
+		"id": 18,
+		"name": "Black Polar Dust",
+		"base_cost": 15,
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 19,
+		"name": "Breathing Filters",
+		"base_cost": 11,
+		"tags": ["science"],
+		"version": "base"
+	},
+	{
+		"id": 20,
+		"name": "Bushes",
+		"base_cost": 10,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 21,
+		"name": "Capital",
+		"base_cost": 26,
+		"tags": ["city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 22,
+		"name": "Carbonate Processing",
+		"base_cost": 6,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 23,
+		"name": "Cloud Seeding",
+		"base_cost": 11,
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 24,
+		"name": "Colonizer Training Camp",
+		"base_cost": 8,
+		"tags": ["jovian", "building"],
+		"version": "base"
+	},
+	{
+		"id": 25,
+		"name": "Comet",
+		"base_cost": 21,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 26,
+		"name": "Convoy From Europa",
+		"base_cost": 15,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 27,
+		"name": "Cupola City",
+		"base_cost": 16,
+		"tags": ["city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 28,
+		"name": "Decomposers",
+		"base_cost": 5,
+		"tags": ["microbe"],
+		"version": "base"
+	},
+	{
+		"id": 29,
+		"name": "Deep Well Heating",
+		"base_cost": 13,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 30,
+		"name": "Deimos Down",
+		"base_cost": 31,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 31,
+		"name": "Designed Microorganisms",
+		"base_cost": 16,
+		"tags": ["science", "microbe"],
+		"version": "base"
+	},
+	{
+		"id": 32,
+		"name": "Domed Crater",
+		"base_cost": 24,
+		"tags": ["city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 33,
+		"name": "Dust Seals",
+		"base_cost": 2,
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 34,
+		"name": "Ecological Zone",
+		"base_cost": 12,
+		"tags": ["animal", "plant"],
+		"version": "base"
+	},
+	{
+		"id": 35,
+		"name": "Energy Saving",
+		"base_cost": 15,
+		"tags": ["power"],
+		"version": "base"
+	},
+	{
+		"id": 36,
+		"name": "Eos Chasma National Park",
+		"base_cost": 16,
+		"tags": ["plant", "building"],
+		"version": "base"
+	},
+	{
+		"id": 37,
+		"name": "Equatorial Magnetizer",
+		"base_cost": 11,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 38,
+		"name": "Extreme-Cold Fungus",
+		"base_cost": 13,
+		"tags": ["microbe"],
+		"version": "base"
+	},
+	{
+		"id": 39,
+		"name": "Farming",
+		"base_cost": 16,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 40,
+		"name": "Fish",
+		"base_cost": 9,
+		"tags": ["animal"],
+		"version": "base"
+	},
+	{
+		"id": 41,
+		"name": "Flooding",
+		"base_cost": 7,
+		"tags": ["event"],
+		"version": "base"
+	},
+	{
+		"id": 42,
+		"name": "Food Factory",
+		"base_cost": 12,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 43,
+		"name": "Fusion Power",
+		"base_cost": 14,
+		"tags": ["science", "power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 44,
+		"name": "Fueled Generators",
+		"base_cost": 1,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 45,
+		"name": "Ganymede Colony",
+		"base_cost": 20,
+		"tags": ["jovian", "space", "city"],
+		"version": "base"
+	},
+	{
+		"id": 46,
+		"name": "Geothermal Power",
+		"base_cost": 11,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 47,
+		"name": "GHG Factories",
+		"base_cost": 11,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 48,
+		"name": "GHG Producing Bacteria",
+		"base_cost": 8,
+		"tags": ["science", "microbe"],
+		"version": "base"
+	},
+	{
+		"id": 49,
+		"name": "Giant Ice Asteroid",
+		"base_cost": 36,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 50,
+		"name": "Giant Space Mirror",
+		"base_cost": 17,
+		"tags": ["power", "space"],
+		"version": "base"
+	},
+	{
+		"id": 51,
+		"name": "Grass",
+		"base_cost": 11,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 52,
+		"name": "Great Dam",
+		"base_cost": 12,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 53,
+		"name": "Greenhouses",
+		"base_cost": 6,
+		"tags": ["plant", "building"],
+		"version": "base"
+	},
+	{
+		"id": 54,
+		"name": "Heather",
+		"base_cost": 6,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 55,
+		"name": "Heat Trappers",
+		"base_cost": 6,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 56,
+		"name": "Herbivores",
+		"base_cost": 12,
+		"tags": ["animal"],
+		"version": "base"
+	},
+	{
+		"id": 57,
+		"name": "Ice Asteroid",
+		"base_cost": 23,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 58,
+		"name": "Ice Cap Melting",
+		"base_cost": 5,
+		"tags": ["event"],
+		"version": "base"
+	},
+	{
+		"id": 59,
+		"name": "Immigrant City",
+		"base_cost": 13,
+		"tags": ["city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 60,
+		"name": "Immigration Shuttles",
+		"base_cost": 31,
+		"tags": ["earth", "space"],
+		"version": "base"
+	},
+	{
+		"id": 61,
+		"name": "Imported GHG",
+		"base_cost": 7,
+		"tags": ["earth", "space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 62,
+		"name": "Imported Hydrogen",
+		"base_cost": 16,
+		"tags": ["earth", "space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 63,
+		"name": "Imported Nitrogen",
+		"base_cost": 23,
+		"tags": ["earth", "space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 64,
+		"name": "Import of Advanced GHG",
+		"base_cost": 9,
+		"tags": ["earth", "space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 65,
+		"name": "Industrial Microbes",
+		"base_cost": 12,
+		"tags": ["microbe", "building"],
+		"version": "base"
+	},
+	{
+		"id": 66,
+		"name": "Insects",
+		"base_cost": 9,
+		"tags": ["microbe"],
+		"version": "base"
+	},
+	{
+		"id": 67,
+		"name": "Insulation",
+		"base_cost": 2,
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 68,
+		"name": "Ironworks",
+		"base_cost": 11,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 69,
+		"name": "Kelp Farming",
+		"base_cost": 17,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 70,
+		"name": "Lake Marineris",
+		"base_cost": 18,
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 71,
+		"name": "Large Convoy",
+		"base_cost": 36,
+		"tags": ["earth", "space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 72,
+		"name": "Lava Flows",
+		"base_cost": 18,
+		"tags": ["event"],
+		"version": "base"
+	},
+	{
+		"id": 73,
+		"name": "Lichen",
+		"base_cost": 7,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 74,
+		"name": "Livestock",
+		"base_cost": 13,
+		"tags": ["animal"],
+		"version": "base"
+	},
+	{
+		"id": 75,
+		"name": "Local Heat Trapping",
+		"base_cost": 1,
+		"tags": ["event"],
+		"version": "base"
+	},
+	{
+		"id": 76,
+		"name": "Lunar Beam",
+		"base_cost": 13,
+		"tags": ["earth", "power"],
+		"version": "base"
+	},
+	{
+		"id": 77,
+		"name": "Magnetic Field Dome",
+		"base_cost": 5,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 78,
+		"name": "Magnetic Field Generators",
+		"base_cost": 20,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 79,
+		"name": "Mangrove",
+		"base_cost": 12,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 80,
+		"name": "Martian Rails",
+		"base_cost": 13,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 81,
+		"name": "Methane From Titan",
+		"base_cost": 28,
+		"tags": ["jovian", "space"],
+		"version": "base"
+	},
+	{
+		"id": 82,
+		"name": "Micro-Mills",
+		"base_cost": 3,
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 83,
+		"name": "Mining Expedition",
+		"base_cost": 12,
+		"tags": ["event"],
+		"version": "base"
+	},
+	{
+		"id": 84,
+		"name": "Mining Rights",
+		"base_cost": 9,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 85,
+		"name": "Mohole Area",
+		"base_cost": 20,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 86,
+		"name": "Moss",
+		"base_cost": 4,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 87,
+		"name": "Natural Preserve",
+		"base_cost": 9,
+		"tags": ["science", "building"],
+		"version": "base"
+	},
+	{
+		"id": 88,
+		"name": "Nitrite Reducing Bacteria",
+		"base_cost": 11,
+		"tags": ["microbe"],
+		"version": "base"
+	},
+	{
+		"id": 89,
+		"name": "Nitrogen-Rich Asteroid",
+		"base_cost": 31,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 90,
+		"name": "Nitrophilic Moss",
+		"base_cost": 8,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 91,
+		"name": "Noctis City",
+		"base_cost": 18,
+		"tags": ["city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 92,
+		"name": "Noctis Farming",
+		"base_cost": 10,
+		"tags": ["plant", "building"],
+		"version": "base"
+	},
+	{
+		"id": 93,
+		"name": "Nuclear Power",
+		"base_cost": 10,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 94,
+		"name": "Nuclear Zone",
+		"base_cost": 10,
+		"tags": ["earth"],
+		"version": "base"
+	},
+	{
+		"id": 95,
+		"name": "Open City",
+		"base_cost": 23,
+		"tags": ["city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 96,
+		"name": "Optimal Aerobraking",
+		"base_cost": 7,
+		"tags": ["space"],
+		"version": "base"
+	},
+	{
+		"id": 97,
+		"name": "Ore Processor",
+		"base_cost": 13,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 98,
+		"name": "Permafrost Extraction",
+		"base_cost": 8,
+		"tags": ["event"],
+		"version": "base"
+	},
+	{
+		"id": 99,
+		"name": "Peroxide Power",
+		"base_cost": 7,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 100,
+		"name": "Pets",
+		"base_cost": 10,
+		"tags": ["earth", "animal"],
+		"version": "base"
+	},
+	{
+		"id": 101,
+		"name": "Phobos Space Haven",
+		"base_cost": 25,
+		"tags": ["space", "city"],
+		"version": "base"
+	},
+	{
+		"id": 102,
+		"name": "Plantation",
+		"base_cost": 15,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 103,
+		"name": "Power Grid",
+		"base_cost": 18,
+		"tags": ["power"],
+		"version": "base"
+	},
+	{
+		"id": 104,
+		"name": "Power Plant",
+		"base_cost": 4,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 105,
+		"name": "Predators",
+		"base_cost": 14,
+		"tags": ["animal"],
+		"version": "base"
+	},
+	{
+		"id": 106,
+		"name": "Protected Valley",
+		"base_cost": 23,
+		"tags": ["plant", "building"],
+		"version": "base"
+	},
+	{
+		"id": 107,
+		"name": "Rad-Chem Factory",
+		"base_cost": 8,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 108,
+		"name": "Regolith Eaters",
+		"base_cost": 13,
+		"tags": ["science", "microbe"],
+		"version": "base"
+	},
+	{
+		"id": 109,
+		"name": "Release of Inert Gases",
+		"base_cost": 14,
+		"tags": ["event"],
+		"version": "base"
+	},
+	{
+		"id": 110,
+		"name": "Research Outpost",
+		"base_cost": 18,
+		"tags": ["science", "city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 111,
+		"name": "Rover Construction",
+		"base_cost": 8,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 112,
+		"name": "Search For Life",
+		"base_cost": 3,
+		"tags": ["science"],
+		"version": "base"
+	},
+	{
+		"id": 113,
+		"name": "Shuttles",
+		"base_cost": 10,
+		"tags": ["space"],
+		"version": "base"
+	},
+	{
+		"id": 114,
+		"name": "Small Animals",
+		"base_cost": 6,
+		"tags": ["animal"],
+		"version": "base"
+	},
+	{
+		"id": 115,
+		"name": "Soil Factory",
+		"base_cost": 9,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 116,
+		"name": "Solar Power",
+		"base_cost": 11,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 117,
+		"name": "Solar Wind Power",
+		"base_cost": 11,
+		"tags": ["science", "space", "power"],
+		"version": "base"
+	},
+	{
+		"id": 118,
+		"name": "Soletta",
+		"base_cost": 35,
+		"tags": ["space"],
+		"version": "base"
+	},
+	{
+		"id": 119,
+		"name": "Space Mirrors",
+		"base_cost": 3,
+		"tags": ["power", "space"],
+		"version": "base"
+	},
+	{
+		"id": 120,
+		"name": "Special Design",
+		"base_cost": 4,
+		"tags": ["science", "event"],
+		"version": "base"
+	},
+	{
+		"id": 121,
+		"name": "Steelworks",
+		"base_cost": 15,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 122,
+		"name": "Strip Mine",
+		"base_cost": 25,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 123,
+		"name": "Subterranean Reservoir",
+		"base_cost": 11,
+		"tags": ["event"],
+		"version": "base"
+	},
+	{
+		"id": 124,
+		"name": "Symbiotic Fungus",
+		"base_cost": 4,
+		"tags": ["microbe"],
+		"version": "base"
+	},
+	{
+		"id": 125,
+		"name": "Tectonic Stress Power",
+		"base_cost": 18,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 126,
+		"name": "Towing A Comet",
+		"base_cost": 23,
+		"tags": ["space", "event"],
+		"version": "base"
+	},
+	{
+		"id": 127,
+		"name": "Trees",
+		"base_cost": 13,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 128,
+		"name": "Tundra Farming",
+		"base_cost": 16,
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 129,
+		"name": "Underground City",
+		"base_cost": 18,
+		"tags": ["city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 130,
+		"name": "Underground Detonations",
+		"base_cost": 6,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 131,
+		"name": "Urbanized Area",
+		"base_cost": 10,
+		"tags": ["city", "building"],
+		"version": "base"
+	},
+	{
+		"id": 132,
+		"name": "Water Import From Europa",
+		"base_cost": 25,
+		"tags": ["jovian", "space"],
+		"version": "base"
+	},
+	{
+		"id": 133,
+		"name": "Water Splitting Plant",
+		"base_cost": 12,
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 134,
+		"name": "Wave Power",
+		"base_cost": 8,
+		"tags": ["power"],
+		"version": "base"
+	},
+	{
+		"id": 135,
+		"name": "Windmills",
+		"base_cost": 6,
+		"tags": ["power", "building"],
+		"version": "base"
+	},
+	{
+		"id": 136,
+		"name": "Worms",
+		"base_cost": 8,
+		"tags": ["microbe"],
+		"version": "base"
+	},
+	{
+		"id": 137,
+		"name": "Zeppelins",
+		"base_cost": 13,
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 138,
+		"name": "Acquired Company",
+		"base_cost": 10,
+		"tags": ["earth"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 139,
+		"name": "Advanced Alloys",
+		"base_cost": 9,
+		"tags": ["science"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 140,
+		"name": "AI Central",
+		"base_cost": 21,
+		"tags": ["science", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 141,
+		"name": "Anti-Gravity Technology",
+		"base_cost": 14,
+		"tags": ["science"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 142,
+		"name": "Asteroid Mining Consortium",
+		"base_cost": 13,
+		"tags": ["jovian"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 143,
+		"name": "Bribed Committee",
+		"base_cost": 7,
+		"tags": ["earth", "event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 144,
+		"name": "Building Industries",
+		"base_cost": 6,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 145,
+		"name": "Business Contacts",
+		"base_cost": 7,
+		"tags": ["earth", "event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 146,
+		"name": "Business Network",
+		"base_cost": 4,
+		"tags": ["earth"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 147,
+		"name": "Callisto Penal Mines",
+		"base_cost": 24,
+		"tags": ["jovian", "space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 148,
+		"name": "Caretaker Contract",
+		"base_cost": 3,
+		"tags": [],
+		"version": "corporate_era"
+	},
+	{
+		"id": 149,
+		"name": "Cartel",
+		"base_cost": 8,
+		"tags": ["earth"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 150,
+		"name": "CEO's Favorite Project",
+		"base_cost": 1,
+		"tags": ["event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 151,
+		"name": "Commercial District",
+		"base_cost": 16,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 152,
+		"name": "Corporate Stronghold",
+		"base_cost": 11,
+		"tags": ["city", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 153,
+		"name": "Development Center",
+		"base_cost": 11,
+		"tags": ["science", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 154,
+		"name": "Earth Catapult",
+		"base_cost": 23,
+		"tags": ["earth"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 155,
+		"name": "Earth Office",
+		"base_cost": 1,
+		"tags": ["earth"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 156,
+		"name": "Electro Catapult",
+		"base_cost": 17,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 157,
+		"name": "Energy Tapping",
+		"base_cost": 3,
+		"tags": ["power"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 158,
+		"name": "Fuel Factory",
+		"base_cost": 6,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 159,
+		"name": "Gene Repair",
+		"base_cost": 12,
+		"tags": ["science"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 160,
+		"name": "Great Escarpment Consortium",
+		"base_cost": 6,
+		"tags": [],
+		"version": "corporate_era"
+	},
+	{
+		"id": 161,
+		"name": "Hackers",
+		"base_cost": 3,
+		"tags": [],
+		"version": "corporate_era"
+	},
+	{
+		"id": 162,
+		"name": "Hired Raiders",
+		"base_cost": 1,
+		"tags": ["event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 163,
+		"name": "Indentured Workers",
+		"base_cost": 0,
+		"tags": ["event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 164,
+		"name": "Industrial Center",
+		"base_cost": 4,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 165,
+		"name": "Interstellar Colony Ship",
+		"base_cost": 24,
+		"tags": ["earth", "space", "event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 166,
+		"name": "Invention Contest",
+		"base_cost": 2,
+		"tags": ["science", "event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 167,
+		"name": "Inventors' Guild",
+		"base_cost": 9,
+		"tags": ["science"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 168,
+		"name": "Investment Loan",
+		"base_cost": 3,
+		"tags": ["earth", "event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 169,
+		"name": "Io Mining Industries",
+		"base_cost": 41,
+		"tags": ["jovian", "space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 170,
+		"name": "Lagrange Observatory",
+		"base_cost": 9,
+		"tags": ["science", "space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 171,
+		"name": "Land Claim",
+		"base_cost": 1,
+		"tags": ["event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 172,
+		"name": "Lightning Harvest",
+		"base_cost": 8,
+		"tags": ["power"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 173,
+		"name": "Mars University",
+		"base_cost": 8,
+		"tags": ["science", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 174,
+		"name": "Mass Converter",
+		"base_cost": 8,
+		"tags": ["science", "power"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 175,
+		"name": "Media Archives",
+		"base_cost": 8,
+		"tags": ["earth"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 176,
+		"name": "Media Group",
+		"base_cost": 6,
+		"tags": ["earth"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 177,
+		"name": "Medical Lab",
+		"base_cost": 13,
+		"tags": ["science", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 178,
+		"name": "Mine",
+		"base_cost": 4,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 179,
+		"name": "Mineral Deposit",
+		"base_cost": 5,
+		"tags": ["event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 180,
+		"name": "Mining Area",
+		"base_cost": 4,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 181,
+		"name": "Miranda Resort",
+		"base_cost": 12,
+		"tags": ["jovian", "space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 182,
+		"name": "Olympus Conference",
+		"base_cost": 10,
+		"tags": ["science", "earth", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 183,
+		"name": "Physics Complex",
+		"base_cost": 12,
+		"tags": ["science", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 184,
+		"name": "Power Infrastructure",
+		"base_cost": 4,
+		"tags": ["power", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 185,
+		"name": "Power Supply Consortium",
+		"base_cost": 5,
+		"tags": ["power"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 186,
+		"name": "Protected Habitats",
+		"base_cost": 5,
+		"tags": [],
+		"version": "corporate_era"
+	},
+	{
+		"id": 187,
+		"name": "Quantum Extractor",
+		"base_cost": 13,
+		"tags": ["science", "power"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 188,
+		"name": "Rad-Suits",
+		"base_cost": 6,
+		"tags": [],
+		"version": "corporate_era"
+	},
+	{
+		"id": 189,
+		"name": "Research",
+		"base_cost": 11,
+		"tags": ["science", "science"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 190,
+		"name": "Restricted Area",
+		"base_cost": 11,
+		"tags": ["science"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 191,
+		"name": "Robotic Workforce",
+		"base_cost": 9,
+		"tags": ["science"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 192,
+		"name": "Sabotage",
+		"base_cost": 1,
+		"tags": ["event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 193,
+		"name": "Satellites",
+		"base_cost": 10,
+		"tags": ["space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 194,
+		"name": "Security Fleet",
+		"base_cost": 12,
+		"tags": ["space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 195,
+		"name": "Space Elevator",
+		"base_cost": 27,
+		"tags": ["space", "building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 196,
+		"name": "Space Station",
+		"base_cost": 10,
+		"tags": ["space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 197,
+		"name": "Sponsors",
+		"base_cost": 6,
+		"tags": ["earth"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 198,
+		"name": "Standard Technology",
+		"base_cost": 6,
+		"tags": ["science"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 199,
+		"name": "Tardigrades",
+		"base_cost": 4,
+		"tags": ["microbe"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 200,
+		"name": "Technology Demonstration",
+		"base_cost": 5,
+		"tags": ["science", "space", "event"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 201,
+		"name": "Terraforming Ganymede",
+		"base_cost": 33,
+		"tags": ["jovian", "space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 202,
+		"name": "Titanium Mine",
+		"base_cost": 7,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 203,
+		"name": "Toll Station",
+		"base_cost": 12,
+		"tags": ["space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 204,
+		"name": "Trans-Neptune Probe",
+		"base_cost": 6,
+		"tags": ["science", "space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 205,
+		"name": "Tropical Resort",
+		"base_cost": 13,
+		"tags": ["building"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 206,
+		"name": "Vesta Shipyard",
+		"base_cost": 15,
+		"tags": ["jovian", "space"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 207,
+		"name": "Viral Enhancers",
+		"base_cost": 9,
+		"tags": ["science", "microbe"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 208,
+		"name": "Virus",
+		"base_cost": 1,
+		"tags": ["microbe", "event"],
+		"version": "corporate_era"
+	}
+]
