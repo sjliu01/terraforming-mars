@@ -7,30 +7,36 @@
 pre-commit:
   parallel: true
   jobs:
+    # NOTE: keep `glob` on the innermost job that runs a command. In lefthook 2.x a
+    # parent job's glob overrides (rather than intersects with) a nested job's glob,
+    # so a parent glob would feed non-matching files to the child command.
     # Python: lint-fix then format, sequentially (same files)
     - name: python
-      glob: '*.py'
       group:
         piped: true
         jobs:
           - name: ruff-check
+            glob: '*.py'
             run: uv run ruff check --fix {staged_files}
             stage_fixed: true
           - name: ruff-format
+            glob: '*.py'
             run: uv run ruff format {staged_files}
             stage_fixed: true
-    # JS/Svelte/etc: lint-fix then format, sequentially (same files)
+    # JS/Svelte/etc: lint-fix then format, sequentially (same files).
+    # --no-error-on-unmatched-pattern: don't fail when every staged file is excluded
+    # by the tool's own ignorePatterns (e.g. generated schema files).
     - name: frontend
-      glob: '*.{ts,js,svelte,json,css,md,yaml,yml}'
       group:
         piped: true
         jobs:
           - name: oxlint
             glob: '*.{ts,js,svelte}'
-            run: bunx oxlint --fix {staged_files}
+            run: bunx oxlint --fix --no-error-on-unmatched-pattern {staged_files}
             stage_fixed: true
           - name: oxfmt
-            run: bunx oxfmt {staged_files}
+            glob: '*.{ts,js,svelte,json,css,md,yaml,yml}'
+            run: bunx oxfmt --no-error-on-unmatched-pattern {staged_files}
             stage_fixed: true
 
 pre-push:
