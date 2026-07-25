@@ -40,7 +40,7 @@ Typescript types (in `src/lib/schema.d.ts`) from the YAML.
 To run the backend server, run
 
 ```sh
-uv run fastapi dev
+PYTHONPATH=./src/lib/server uv run fastapi dev
 ```
 
 To run the frontend server, run
