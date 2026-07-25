@@ -143,11 +143,11 @@ class PlayerState(BaseModel):
         return card_id
 
     @classmethod
-    def mutate_resources(cls, resources: tuple[tuple[Resource, int], ...]) -> dict[Resource, int]:
+    def mutate_resources(cls, resources: dict[Resource, int]) -> dict[Resource, int]:
         """
         Mutate resources to player state by specified resource and amount tuple, returns the mutated player's resources 
         """
-        for resource, amount in resources:
+        for resource, amount in resources.items():
             cls.resources[resource] += amount
         return cls.resources
 
@@ -157,11 +157,11 @@ class PlayerState(BaseModel):
         return cls.terraform_rating
 
     @classmethod
-    def mutate_production(cls, production_change: tuple[tuple[Resource, int], ...]) -> dict[Resource, int]:
+    def mutate_production(cls, production_change: dict[Resource, int]) -> dict[Resource, int]:
         """
         Mutate resource production(s) to player state by specified resource and amount tuple, returns the mutated player's resource production
         """
-        for resource, amount in production_change:
+        for resource, amount in production_change.items():
             cls.production[resource] += amount
         return cls.production
 
