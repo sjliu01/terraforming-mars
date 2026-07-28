@@ -1,0 +1,569 @@
+[
+	{
+		"q": 0,
+		"r": -4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["steel", "steel"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 1,
+		"r": -4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["steel", "steel"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": 2,
+		"r": -4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 3,
+		"r": -4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 1,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": 4,
+		"r": -4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": -1,
+		"r": -3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 0,
+		"r": -3,
+		"planet": "mars",
+		"name": "Tharsis Tholus",
+		"resource_bonuses": ["steel"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 1,
+		"r": -3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 2,
+		"r": -3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 3,
+		"r": -3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 4,
+		"r": -3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 2,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": -2,
+		"r": -2,
+		"planet": "mars",
+		"name": "Ascraeus Mons",
+		"resource_bonuses": [],
+		"card_bonuses": 1,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -1,
+		"r": -2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 0,
+		"r": -2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 1,
+		"r": -2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 2,
+		"r": -2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 3,
+		"r": -2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 4,
+		"r": -2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["steel"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -3,
+		"r": -1,
+		"planet": "mars",
+		"name": "Pavonis Mons",
+		"resource_bonuses": ["plant", "titanium"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -2,
+		"r": -1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -1,
+		"r": -1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 0,
+		"r": -1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 1,
+		"r": -1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 2,
+		"r": -1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 3,
+		"r": -1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 4,
+		"r": -1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": -4,
+		"r": 0,
+		"planet": "mars",
+		"name": "Arsia Mons",
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -3,
+		"r": 0,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -2,
+		"r": 0,
+		"planet": "mars",
+		"name": "Noctis City",
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -1,
+		"r": 0,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": 0,
+		"r": 0,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": 1,
+		"r": 0,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": 2,
+		"r": 0,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 3,
+		"r": 0,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 4,
+		"r": 0,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -4,
+		"r": 1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -3,
+		"r": 1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant", "plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -2,
+		"r": 1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -1,
+		"r": 1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 0,
+		"r": 1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 1,
+		"r": 1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": 2,
+		"r": 1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": 3,
+		"r": 1,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": -4,
+		"r": 2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -3,
+		"r": 2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -2,
+		"r": 2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -1,
+		"r": 2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 0,
+		"r": 2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 1,
+		"r": 2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["plant"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 2,
+		"r": 2,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -4,
+		"r": 3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["steel", "steel"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -3,
+		"r": 3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -2,
+		"r": 3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 1,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -1,
+		"r": 3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 1,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 0,
+		"r": 3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 1,
+		"r": 3,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["titanium"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -4,
+		"r": 4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["steel"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -3,
+		"r": 4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["steel", "steel"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -2,
+		"r": 4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": -1,
+		"r": 4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 0,
+		"r": 4,
+		"planet": "mars",
+		"name": null,
+		"resource_bonuses": ["titanium", "titanium"],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": true
+	},
+	{
+		"q": 0,
+		"r": 0,
+		"planet": "phobos",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	},
+	{
+		"q": 0,
+		"r": 0,
+		"planet": "ganymede",
+		"name": null,
+		"resource_bonuses": [],
+		"card_bonuses": 0,
+		"is_reserved_for_ocean": false
+	}
+]

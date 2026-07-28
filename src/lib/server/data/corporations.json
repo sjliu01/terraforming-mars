@@ -1,0 +1,80 @@
+[
+	{
+		"id": 1,
+		"name": "Beginner Corporation",
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 2,
+		"name": "CrediCor",
+		"tags": [],
+		"version": "base"
+	},
+	{
+		"id": 3,
+		"name": "Ecoline",
+		"tags": ["plant"],
+		"version": "base"
+	},
+	{
+		"id": 4,
+		"name": "Helion",
+		"tags": ["space"],
+		"version": "base"
+	},
+	{
+		"id": 5,
+		"name": "Interplanetary Cinematics",
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 6,
+		"name": "Inventrix",
+		"tags": ["science"],
+		"version": "base"
+	},
+	{
+		"id": 7,
+		"name": "Mining Guild",
+		"tags": ["building", "building"],
+		"version": "base"
+	},
+	{
+		"id": 8,
+		"name": "PhoboLog",
+		"tags": ["space"],
+		"version": "base"
+	},
+	{
+		"id": 9,
+		"name": "Tharsis Republic",
+		"tags": ["building"],
+		"version": "base"
+	},
+	{
+		"id": 10,
+		"name": "ThorGate",
+		"tags": ["power"],
+		"version": "base"
+	},
+	{
+		"id": 11,
+		"name": "United Nations Mars Initiative",
+		"tags": ["earth"],
+		"version": "base"
+	},
+	{
+		"id": 12,
+		"name": "Saturn Systems",
+		"tags": ["jovian"],
+		"version": "corporate_era"
+	},
+	{
+		"id": 13,
+		"name": "Teractor",
+		"tags": ["earth"],
+		"version": "corporate_era"
+	}
+]

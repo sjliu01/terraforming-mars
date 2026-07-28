@@ -1,5 +1,31 @@
 components:
   schemas:
+    CardDescription:
+      properties:
+        base_cost:
+          title: Base Cost
+          type: integer
+        id:
+          title: Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        tags:
+          items:
+            $ref: '#/components/schemas/Tag'
+          title: Tags
+          type: array
+        version:
+          $ref: '#/components/schemas/Version'
+      required:
+      - id
+      - name
+      - base_cost
+      - tags
+      - version
+      title: CardDescription
+      type: object
     CardState:
       properties:
         action_used:
@@ -16,6 +42,28 @@ components:
       - action_used
       - resources_can_be_taken
       title: CardState
+      type: object
+    CorporationDescription:
+      properties:
+        id:
+          title: Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        tags:
+          items:
+            $ref: '#/components/schemas/Tag'
+          title: Tags
+          type: array
+        version:
+          $ref: '#/components/schemas/Version'
+      required:
+      - id
+      - name
+      - tags
+      - version
+      title: CorporationDescription
       type: object
     GameState:
       properties:
@@ -87,6 +135,39 @@ components:
       - passed
       title: GenerationState
       type: object
+    GetCardsResponse:
+      properties:
+        cards:
+          items:
+            $ref: '#/components/schemas/CardDescription'
+          title: Cards
+          type: array
+      required:
+      - cards
+      title: GetCardsResponse
+      type: object
+    GetCorporationsResponse:
+      properties:
+        cards:
+          items:
+            $ref: '#/components/schemas/CorporationDescription'
+          title: Cards
+          type: array
+      required:
+      - cards
+      title: GetCorporationsResponse
+      type: object
+    GetTilesResponse:
+      properties:
+        cards:
+          items:
+            $ref: '#/components/schemas/TileDescription'
+          title: Cards
+          type: array
+      required:
+      - cards
+      title: GetTilesResponse
+      type: object
     GlobalParameter:
       enum:
       - ocean
@@ -112,6 +193,13 @@ components:
       - final_production
       - final_greenery
       title: Phase
+      type: string
+    Planet:
+      enum:
+      - mars
+      - phobos
+      - ganymede
+      title: Planet
       type: string
     PlayerState:
       properties:
@@ -166,6 +254,57 @@ components:
       - heat
       title: Resource
       type: string
+    Tag:
+      enum:
+      - animal
+      - building
+      - city
+      - earth
+      - event
+      - jovian
+      - microbe
+      - plant
+      - power
+      - science
+      - space
+      title: Tag
+      type: string
+    TileDescription:
+      properties:
+        card_bonuses:
+          title: Card Bonuses
+          type: integer
+        is_reserved_for_ocean:
+          title: Is Reserved For Ocean
+          type: boolean
+        name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Name
+        planet:
+          $ref: '#/components/schemas/Planet'
+        q:
+          title: Q
+          type: integer
+        r:
+          title: R
+          type: integer
+        resource_bonuses:
+          items:
+            $ref: '#/components/schemas/Resource'
+          title: Resource Bonuses
+          type: array
+      required:
+      - q
+      - r
+      - planet
+      - name
+      - resource_bonuses
+      - card_bonuses
+      - is_reserved_for_ocean
+      title: TileDescription
+      type: object
     TileState:
       properties:
         owner:
@@ -196,11 +335,50 @@ components:
       - special
       title: TileType
       type: string
+    Version:
+      enum:
+      - base
+      - corporate_era
+      title: Version
+      type: string
 info:
   title: FastAPI
   version: 0.1.0
 openapi: 3.1.0
 paths:
+  /api/data/cards/:
+    get:
+      operationId: get_cards_api_data_cards__get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCardsResponse'
+          description: Successful Response
+      summary: Get Cards
+  /api/data/corporations/:
+    get:
+      operationId: get_corporations_api_data_corporations__get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCorporationsResponse'
+          description: Successful Response
+      summary: Get Corporations
+  /api/data/tiles/:
+    get:
+      operationId: get_tiles_api_data_tiles__get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTilesResponse'
+          description: Successful Response
+      summary: Get Tiles
   /api/message/:
     get:
       operationId: get_message_api_message__get
