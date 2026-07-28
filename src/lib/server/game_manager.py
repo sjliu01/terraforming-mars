@@ -1,13 +1,11 @@
 import typing as t
 
-from game_types import Card, CardId, Corporation, CorporationId, GameState, Tile, TileId
+from game_types import Corporation, CorporationId, GameState, Tile, TileId
+
+from lib.server.repositories.card_repository import CardRepository
 
 
 def load_corporations() -> dict[CorporationId, Corporation]:
-    return {}
-
-
-def load_cards() -> dict[CardId, Card]:
     return {}
 
 
@@ -22,12 +20,10 @@ class GameManager:
         self,
         state: GameState,
         corporations: t.Mapping[CorporationId, Corporation],
-        cards: t.Mapping[CardId, Card],
         tiles: t.Mapping[TileId, Tile],
     ):
         self.state = state
         self.corporations = corporations
-        self.cards = cards
         self.tiles = tiles
 
     @classmethod
@@ -35,14 +31,10 @@ class GameManager:
         cls,
         num_players: int,
         corporations: t.Mapping[CorporationId, Corporation] | None = None,
-        cards: t.Mapping[CardId, Card] | None = None,
         tiles: t.Mapping[TileId, Tile] | None = None,
     ) -> "GameManager":
         if corporations is None:
             corporations = load_corporations()
-
-        if cards is None:
-            cards = load_cards()
 
         if tiles is None:
             tiles = load_tiles()
@@ -50,11 +42,10 @@ class GameManager:
         return GameManager(
             state=GameState.new(
                 num_players,
-                cards.keys(),
                 tiles.keys(),
+                card_repository=CardRepository(),
             ),
             corporations=corporations,
-            cards=cards,
             tiles=tiles,
         )
 

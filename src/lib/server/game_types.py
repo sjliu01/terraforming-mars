@@ -16,6 +16,8 @@ from enum import StrEnum, auto
 
 from pydantic import BaseModel
 
+from lib.server.repositories.card_repository import CardRepository
+
 # Misc types
 
 
@@ -107,21 +109,24 @@ class PlayerState(BaseModel):
     production: dict[Resource, int]
     resources: dict[Resource, int]
     terraform_rating: int
+    card_repository: CardRepository
 
     @classmethod
-    def new(cls) -> "PlayerState":
+    def new(cls, card_repository: CardRepository) -> "PlayerState":
         return PlayerState(
             corporation=None,
             hand=[],
             tableau={},
+            research_phase_cards=[],
             production={resource: 0 for resource in Resource},
             resources={resource: 0 for resource in Resource},
             terraform_rating=20,
+            card_repository=card_repository,
         )
 
     def remove_card_from_hand(self, card_id: CardId) -> CardId:
         """
-        Removes card from hand and returns the removed card Id 
+        Removes card from hand and returns the removed card Id
         """
         if card_id not in self.hand:
             raise
@@ -132,17 +137,26 @@ class PlayerState(BaseModel):
         self.hand.append(card_id)
         return card_id
 
-    def add_card_to_tableau(self, card_id: CardId, num_resources: int = 0, resources_can_be_taken: bool = False) -> CardId:
+    def add_card_to_tableau(
+        self,
+        card_id: CardId,
+        num_resources: int = 0,
+        resources_can_be_taken: bool = False,
+    ) -> CardId:
         """
         Adds a card to player's tableau and returns the added card id
         It is the callers responsibility to ensure that the card can indeed be played.
         """
-        self.tableau[card_id] = CardState(num_resources=num_resources, action_used=False, resources_can_be_taken=resources_can_be_taken)
+        self.tableau[card_id] = CardState(
+            num_resources=num_resources,
+            action_used=False,
+            resources_can_be_taken=resources_can_be_taken,
+        )
         return card_id
 
     def mutate_resources(self, resources: dict[Resource, int]) -> dict[Resource, int]:
         """
-        Mutate resources to player state by specified resource and amount tuple, returns the mutated player's resources 
+        Mutate resources to player state by specified resource and amount tuple, returns the mutated player's resources
         """
         for resource, amount in resources.items():
             self.resources[resource] += amount
@@ -152,7 +166,9 @@ class PlayerState(BaseModel):
         self.terraform_rating += rating_change
         return self.terraform_rating
 
-    def mutate_production(self, production_change: dict[Resource, int]) -> dict[Resource, int]:
+    def mutate_production(
+        self, production_change: dict[Resource, int]
+    ) -> dict[Resource, int]:
         """
         Mutate resource production(s) to player state by specified resource and amount tuple, returns the mutated player's resource production
         """
@@ -162,11 +178,25 @@ class PlayerState(BaseModel):
 
     def set_corporation(self, corporation: CorporationId) -> CorporationId:
         """
-        Sets the user's corporation if not already set 
+        Sets the user's corporation if not already set
         """
         if self.corporation is None:
             self.corporation = corporation
         return self.corporation
+
+    def purchase_card(self, card_id: CardId) -> bool:
+        """
+        Purchases a card for a user.
+        """
+        # TODO: We'll need to implement logic for any corporation / card discounts the player has.
+        # We also will need to implement resource conversions
+        card = self.card_repository.get_by_id(card_id)
+        if self.resources[Resource.MEGA_CREDITS] >= card.base_cost:
+            self.resources[Resource.MEGA_CREDITS] -= card.base_cost
+            self.hand.append(CardId(card.id))
+            return True
+        else:
+            return False
 
 
 class TileState(BaseModel):
@@ -212,13 +242,17 @@ class GameState(BaseModel):
     def new(
         cls,
         num_players: int,
-        card_ids: t.Collection[CardId],
         tile_ids: t.Collection[TileId],
+        card_repository: CardRepository,
     ) -> "GameState":
         return GameState(
-            all_cards=list(card_ids),
+            all_cards=card_repository.get_all_ids(),
             deck=[],
-            player_state=[PlayerState.new() for _ in range(num_players)],
+            discard_pile=[],
+            player_state=[
+                PlayerState.new(card_repository=card_repository)
+                for _ in range(num_players)
+            ],
             board_state={_id: TileState.new() for _id in tile_ids},
             generation_state=GenerationState.new(num_players),
             global_parameter_targets={
