@@ -119,6 +119,55 @@ class PlayerState(BaseModel):
             terraform_rating=20,
         )
 
+    def remove_card_from_hand(self, card_id: CardId) -> CardId:
+        """
+        Removes card from hand and returns the removed card Id 
+        """
+        if card_id not in self.hand:
+            raise
+        self.hand.remove(card_id)
+        return card_id
+
+    def add_card_to_hand(self, card_id: CardId) -> CardId:
+        self.hand.append(card_id)
+        return card_id
+
+    def add_card_to_tableau(self, card_id: CardId, num_resources: int = 0, resources_can_be_taken: bool = False) -> CardId:
+        """
+        Adds a card to player's tableau and returns the added card id
+        It is the callers responsibility to ensure that the card can indeed be played.
+        """
+        self.tableau[card_id] = CardState(num_resources=num_resources, action_used=False, resources_can_be_taken=resources_can_be_taken)
+        return card_id
+
+    def mutate_resources(self, resources: dict[Resource, int]) -> dict[Resource, int]:
+        """
+        Mutate resources to player state by specified resource and amount tuple, returns the mutated player's resources 
+        """
+        for resource, amount in resources.items():
+            self.resources[resource] += amount
+        return self.resources
+
+    def mutate_terraform_rating(self, rating_change: int) -> int:
+        self.terraform_rating += rating_change
+        return self.terraform_rating
+
+    def mutate_production(self, production_change: dict[Resource, int]) -> dict[Resource, int]:
+        """
+        Mutate resource production(s) to player state by specified resource and amount tuple, returns the mutated player's resource production
+        """
+        for resource, amount in production_change.items():
+            self.production[resource] += amount
+        return self.production
+
+    def set_corporation(self, corporation: CorporationId) -> CorporationId:
+        """
+        Sets the user's corporation if not already set 
+        """
+        if self.corporation is None:
+            self.corporation = corporation
+        return self.corporation
+
 
 class TileState(BaseModel):
     tile: TileType | None
@@ -151,6 +200,7 @@ class GenerationState(BaseModel):
 class GameState(BaseModel):
     all_cards: list[CardId]
     deck: list[CardId]
+    discards: list[CardId]
     player_state: list[PlayerState]
     board_state: dict[TileId, TileState]
     generation_state: GenerationState
